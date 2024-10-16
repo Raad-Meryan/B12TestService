@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AssemblyName>B12Test.Migrator</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>B12Test.Migrator</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="appsettings.json;log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Abp.Castle.Log4Net" Version="9.4.1" />
+    <PackageReference Include="Volo.Abp.EventBus" Version="8.3.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\B12Test.Core\B12Test.Core.csproj" />
+    <ProjectReference Include="..\B12Test.EntityFrameworkCore\B12Test.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+</Project>
